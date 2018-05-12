@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bOl-kO-8kt">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Fotos-->
+        <scene sceneID="lNk-KU-5WB">
+            <objects>
+                <tableViewController id="lhg-o8-mK3" customClass="FotosTableViewController" customModule="tut" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="wch-JW-PTh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FotosTableViewCell" rowHeight="90" id="EgZ-OX-oyI" customClass="FotosTableViewCell" customModule="tut" customModuleProvider="target">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EgZ-OX-oyI" id="BBZ-hq-Jgb">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="TJX-Dx-kPw">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="89"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlc-pM-pvh">
+                                            <rect key="frame" x="98" y="8" width="214" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SF2-Sw-TOI" customClass="RatingControl" customModule="tut" customModuleProvider="target">
+                                            <rect key="frame" x="98" y="37" width="214" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="LName" destination="xlc-pM-pvh" id="VXj-On-wcH"/>
+                                    <outlet property="RatingObj" destination="SF2-Sw-TOI" id="xcY-FX-Qq9"/>
+                                    <outlet property="foto" destination="TJX-Dx-kPw" id="EzX-BK-Me7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="lhg-o8-mK3" id="8LI-Qs-Q2t"/>
+                            <outlet property="delegate" destination="lhg-o8-mK3" id="RcX-b0-N1y"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Fotos" id="G92-B8-jo3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AzR-v9-2WG">
+                            <connections>
+                                <segue destination="zvF-4X-vPg" kind="modal" identifier="addfoto" modalTransitionStyle="partialCurl" id="b3p-PT-nWu"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRy-3x-iq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="309" y="284"/>
+        </scene>
+        <!--Selecciona Foto-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="FotosViewController" customModule="tut" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="center" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de la foto" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-vs-hwh">
+                                <rect key="frame" x="16" y="73" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" fixedFrame="YES" placeholderIntrinsicWidth="250" placeholderIntrinsicHeight="250" image="defaultphoto" translatesAutoresizingMaskIntoConstraints="NO" id="wIW-Bn-gX4">
+                                <rect key="frame" x="16" y="119" width="288" height="260"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZFW-oI-ojy" appends="YES" id="wr3-ez-Zmh"/>
+                                </connections>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="288" placeholderIntrinsicHeight="45" translatesAutoresizingMaskIntoConstraints="NO" id="3Sn-4D-Eos" customClass="RatingControl" customModule="tut" customModuleProvider="target">
+                                <rect key="frame" x="51" y="407" width="219" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Selecciona Foto" id="mVZ-L3-8rj">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="UMq-yW-KUF"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="8wp-sH-bq6"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="NTField" destination="9vt-vs-hwh" id="5Yg-BK-uot"/>
+                        <outlet property="imagenes" destination="wIW-Bn-gX4" id="1YX-G3-fmK"/>
+                        <outlet property="ratingControl" destination="3Sn-4D-Eos" id="ssD-ql-ho1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZFW-oI-ojy">
+                    <connections>
+                        <action selector="seleccionarFoto:" destination="vXZ-lx-hvc" id="cmB-SD-her"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1216" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="10K-AQ-uiL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bOl-kO-8kt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nma-W3-SQ7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="lhg-o8-mK3" kind="relationship" relationship="rootViewController" id="hPn-Ns-IY9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fW6-f8-IBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="AxJ-ML-WgP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zvF-4X-vPg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSn-VE-lO2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="UgF-hA-48D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y2Z-1i-ebb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684" y="284"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="defaultphoto" width="280" height="278"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
